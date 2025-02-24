@@ -120,7 +120,7 @@
             Controls.Add(EmuButton);
             Controls.Add(CHButton);
             Name = "MainWindow";
-            Text = "Form1";
+            Text = "Clone Hero Combined Launcher";
             ResumeLayout(false);
         }
 

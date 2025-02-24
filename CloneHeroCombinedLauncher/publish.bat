@@ -1,0 +1,1 @@
+dotnet publish -c Release -r win-x64 --self-contained --single-file -p:AssemblyName="CloneHeroCombinedLauncher-64bit.exe
