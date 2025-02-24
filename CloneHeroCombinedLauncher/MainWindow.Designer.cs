@@ -42,6 +42,7 @@
             CHButton.TabIndex = 0;
             CHButton.Text = "Clone Hero";
             CHButton.UseVisualStyleBackColor = true;
+            CHButton.Click += CHButton_Click;
             // 
             // EmuButton
             // 
@@ -51,6 +52,7 @@
             EmuButton.TabIndex = 1;
             EmuButton.Text = "Controller Emulator";
             EmuButton.UseVisualStyleBackColor = true;
+            EmuButton.Click += EmuButton_Click;
             // 
             // BridgeButton
             // 
@@ -60,6 +62,7 @@
             BridgeButton.TabIndex = 2;
             BridgeButton.Text = "Bridge";
             BridgeButton.UseVisualStyleBackColor = true;
+            BridgeButton.Click += BridgeButton_Click;
             // 
             // NautilusButton
             // 
@@ -69,12 +72,13 @@
             NautilusButton.TabIndex = 3;
             NautilusButton.Text = "Nautilus";
             NautilusButton.UseVisualStyleBackColor = true;
+            NautilusButton.Click += NautilusButton_Click;
             // 
             // MainWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(465, 233);
             Controls.Add(NautilusButton);
             Controls.Add(BridgeButton);
             Controls.Add(EmuButton);
