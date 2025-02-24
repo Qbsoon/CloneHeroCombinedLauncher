@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            openFileDialog1 = new OpenFileDialog();
-            openFileDialog2 = new OpenFileDialog();
-            openFileDialog3 = new OpenFileDialog();
-            openFileDialog4 = new OpenFileDialog();
+            CHOpenDialog = new OpenFileDialog();
+            EmuOpenDialog = new OpenFileDialog();
+            BridgeOpenDialog = new OpenFileDialog();
+            NautilusOpenDialog = new OpenFileDialog();
             NautilusPathButton = new Button();
             BridgePathButton = new Button();
             CHPathButton = new Button();
@@ -44,26 +44,31 @@
             BridgePathLabel = new Label();
             CHPathLabel = new Label();
             EmuPathLabel = new Label();
-            checkBox1 = new CheckBox();
-            checkBox2 = new CheckBox();
-            checkBox3 = new CheckBox();
+            EmuWithCH_CheckBox = new CheckBox();
+            AutoRCH_CheckBox = new CheckBox();
+            AutoREmu_CheckBox = new CheckBox();
+            exitButton = new Button();
             SuspendLayout();
             // 
-            // openFileDialog1
+            // CHOpenDialog
             // 
-            openFileDialog1.FileName = "openFileDialog1";
+            CHOpenDialog.FileName = "Clone Hero.exe";
+            CHOpenDialog.InitialDirectory = "C:\\Program Files\\Clone Hero";
             // 
-            // openFileDialog2
+            // EmuOpenDialog
             // 
-            openFileDialog2.FileName = "openFileDialog2";
+            EmuOpenDialog.FileName = "*.exe";
+            EmuOpenDialog.InitialDirectory = "C:\\Program Files\\Clone Hero";
             // 
-            // openFileDialog3
+            // BridgeOpenDialog
             // 
-            openFileDialog3.FileName = "openFileDialog3";
+            BridgeOpenDialog.FileName = "Bridge.exe";
+            BridgeOpenDialog.InitialDirectory = "%localappdata%\\Programs\\Bridge";
             // 
-            // openFileDialog4
+            // NautilusOpenDialog
             // 
-            openFileDialog4.FileName = "openFileDialog4";
+            NautilusOpenDialog.FileName = "Nautilus.exe";
+            NautilusOpenDialog.InitialDirectory = "C:\\Program Files\\Clone Hero";
             // 
             // NautilusPathButton
             // 
@@ -73,6 +78,7 @@
             NautilusPathButton.TabIndex = 10;
             NautilusPathButton.Text = "...";
             NautilusPathButton.UseVisualStyleBackColor = true;
+            NautilusPathButton.Click += NautilusPathButton_Click;
             // 
             // BridgePathButton
             // 
@@ -82,6 +88,7 @@
             BridgePathButton.TabIndex = 7;
             BridgePathButton.Text = "...";
             BridgePathButton.UseVisualStyleBackColor = true;
+            BridgePathButton.Click += BridgePathButton_Click;
             // 
             // CHPathButton
             // 
@@ -91,6 +98,7 @@
             CHPathButton.TabIndex = 4;
             CHPathButton.Text = "...";
             CHPathButton.UseVisualStyleBackColor = true;
+            CHPathButton.Click += CHPathButton_Click;
             // 
             // EmuPathButton
             // 
@@ -100,6 +108,7 @@
             EmuPathButton.TabIndex = 1;
             EmuPathButton.Text = "...";
             EmuPathButton.UseVisualStyleBackColor = true;
+            EmuPathButton.Click += EmuPathButton_Click;
             // 
             // NautilusPathBox
             // 
@@ -169,44 +178,54 @@
             EmuPathLabel.Text = "Controller Emulator Path";
             EmuPathLabel.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // checkBox1
+            // EmuWithCH_CheckBox
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(47, 198);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(215, 19);
-            checkBox1.TabIndex = 12;
-            checkBox1.Text = "Auto-run Emulator with Clone Hero";
-            checkBox1.UseVisualStyleBackColor = true;
+            EmuWithCH_CheckBox.AutoSize = true;
+            EmuWithCH_CheckBox.Location = new Point(47, 198);
+            EmuWithCH_CheckBox.Name = "EmuWithCH_CheckBox";
+            EmuWithCH_CheckBox.Size = new Size(215, 19);
+            EmuWithCH_CheckBox.TabIndex = 12;
+            EmuWithCH_CheckBox.Text = "Auto-run Emulator with Clone Hero";
+            EmuWithCH_CheckBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // AutoRCH_CheckBox
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(47, 228);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(323, 19);
-            checkBox2.TabIndex = 13;
-            checkBox2.Text = "Auto-run Clone Hero after opening Combined Launcher";
-            checkBox2.UseVisualStyleBackColor = true;
+            AutoRCH_CheckBox.AutoSize = true;
+            AutoRCH_CheckBox.Location = new Point(47, 228);
+            AutoRCH_CheckBox.Name = "AutoRCH_CheckBox";
+            AutoRCH_CheckBox.Size = new Size(323, 19);
+            AutoRCH_CheckBox.TabIndex = 13;
+            AutoRCH_CheckBox.Text = "Auto-run Clone Hero after opening Combined Launcher";
+            AutoRCH_CheckBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // AutoREmu_CheckBox
             // 
-            checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(47, 258);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(311, 19);
-            checkBox3.TabIndex = 14;
-            checkBox3.Text = "Auto-run Emulator after opening Combined Launcher";
-            checkBox3.UseVisualStyleBackColor = true;
+            AutoREmu_CheckBox.AutoSize = true;
+            AutoREmu_CheckBox.Location = new Point(47, 258);
+            AutoREmu_CheckBox.Name = "AutoREmu_CheckBox";
+            AutoREmu_CheckBox.Size = new Size(311, 19);
+            AutoREmu_CheckBox.TabIndex = 14;
+            AutoREmu_CheckBox.Text = "Auto-run Emulator after opening Combined Launcher";
+            AutoREmu_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // exitButton
+            // 
+            exitButton.Location = new Point(478, 258);
+            exitButton.Name = "exitButton";
+            exitButton.Size = new Size(75, 23);
+            exitButton.TabIndex = 16;
+            exitButton.Text = "Save";
+            exitButton.UseVisualStyleBackColor = true;
             // 
             // SettingsWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(569, 293);
-            Controls.Add(checkBox3);
-            Controls.Add(checkBox2);
-            Controls.Add(checkBox1);
+            Controls.Add(exitButton);
+            Controls.Add(AutoREmu_CheckBox);
+            Controls.Add(AutoRCH_CheckBox);
+            Controls.Add(EmuWithCH_CheckBox);
             Controls.Add(NautilusPathLabel);
             Controls.Add(NautilusPathButton);
             Controls.Add(NautilusPathBox);
@@ -227,10 +246,10 @@
 
         #endregion
 
-        private OpenFileDialog openFileDialog1;
-        private OpenFileDialog openFileDialog2;
-        private OpenFileDialog openFileDialog3;
-        private OpenFileDialog openFileDialog4;
+        private OpenFileDialog CHOpenDialog;
+        private OpenFileDialog EmuOpenDialog;
+        private OpenFileDialog BridgeOpenDialog;
+        private OpenFileDialog NautilusOpenDialog;
         private Button NautilusPathButton;
         private Button BridgePathButton;
         private Button CHPathButton;
@@ -243,8 +262,9 @@
         private Label BridgePathLabel;
         private Label CHPathLabel;
         private Label EmuPathLabel;
-        private CheckBox checkBox1;
-        private CheckBox checkBox2;
-        private CheckBox checkBox3;
+        private CheckBox EmuWithCH_CheckBox;
+        private CheckBox AutoRCH_CheckBox;
+        private CheckBox AutoREmu_CheckBox;
+        private Button exitButton;
     }
 }

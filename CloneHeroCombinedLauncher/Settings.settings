@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CloneHeroCombinedLauncher" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="BridgePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">undefined</Value>
+    </Setting>
+    <Setting Name="CHPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">undefined</Value>
+    </Setting>
+    <Setting Name="NautilusPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">undefined</Value>
+    </Setting>
+    <Setting Name="EmuPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">undefined</Value>
+    </Setting>
+    <Setting Name="EmuWithCH" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="AutoRCH" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="AutoREmu" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CHDelayForEmu" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2500</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

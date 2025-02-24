@@ -9,90 +9,113 @@
 //------------------------------------------------------------------------------
 
 namespace CloneHeroCombinedLauncher {
-    using System;
     
     
-    /// <summary>
-    ///   Klasa zasobu wymagająca zdefiniowania typu do wyszukiwania zlokalizowanych ciągów itd.
-    /// </summary>
-    // Ta klasa została automatycznie wygenerowana za pomocą klasy StronglyTypedResourceBuilder
-    // przez narzędzie, takie jak ResGen lub Visual Studio.
-    // Aby dodać lub usunąć składową, edytuj plik ResX, a następnie ponownie uruchom narzędzie ResGen
-    // z opcją /str lub ponownie utwórz projekt VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Settings {
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.13.0.0")]
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
-        private static global::System.Resources.ResourceManager resourceMan;
+        private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
         
-        private static global::System.Globalization.CultureInfo resourceCulture;
-        
-        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Settings() {
-        }
-        
-        /// <summary>
-        /// Zwraca buforowane wystąpienie ResourceManager używane przez tę klasę.
-        /// </summary>
-        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static Settings Default {
             get {
-                if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CloneHeroCombinedLauncher.Settings", typeof(Settings).Assembly);
-                    resourceMan = temp;
-                }
-                return resourceMan;
+                return defaultInstance;
             }
         }
         
-        /// <summary>
-        ///   Przesłania właściwość CurrentUICulture bieżącego wątku dla wszystkich
-        ///   przypadków przeszukiwania zasobów za pomocą tej klasy zasobów wymagającej zdefiniowania typu.
-        /// </summary>
-        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("undefined")]
+        public string BridgePath {
             get {
-                return resourceCulture;
+                return ((string)(this["BridgePath"]));
             }
             set {
-                resourceCulture = value;
+                this["BridgePath"] = value;
             }
         }
         
-        /// <summary>
-        /// Wyszukuje zlokalizowany ciąg podobny do ciągu undefined.
-        /// </summary>
-        internal static string BridgePath {
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("undefined")]
+        public string CHPath {
             get {
-                return ResourceManager.GetString("BridgePath", resourceCulture);
+                return ((string)(this["CHPath"]));
+            }
+            set {
+                this["CHPath"] = value;
             }
         }
         
-        /// <summary>
-        /// Wyszukuje zlokalizowany ciąg podobny do ciągu undefined.
-        /// </summary>
-        internal static string CHPath {
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("undefined")]
+        public string NautilusPath {
             get {
-                return ResourceManager.GetString("CHPath", resourceCulture);
+                return ((string)(this["NautilusPath"]));
+            }
+            set {
+                this["NautilusPath"] = value;
             }
         }
         
-        /// <summary>
-        /// Wyszukuje zlokalizowany ciąg podobny do ciągu undefined.
-        /// </summary>
-        internal static string EmuPath {
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("undefined")]
+        public string EmuPath {
             get {
-                return ResourceManager.GetString("EmuPath", resourceCulture);
+                return ((string)(this["EmuPath"]));
+            }
+            set {
+                this["EmuPath"] = value;
             }
         }
         
-        /// <summary>
-        /// Wyszukuje zlokalizowany ciąg podobny do ciągu undefined.
-        /// </summary>
-        internal static string NautilusPath {
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool EmuWithCH {
             get {
-                return ResourceManager.GetString("NautilusPath", resourceCulture);
+                return ((bool)(this["EmuWithCH"]));
+            }
+            set {
+                this["EmuWithCH"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AutoRCH {
+            get {
+                return ((bool)(this["AutoRCH"]));
+            }
+            set {
+                this["AutoRCH"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AutoREmu {
+            get {
+                return ((bool)(this["AutoREmu"]));
+            }
+            set {
+                this["AutoREmu"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2500")]
+        public int CHDelayForEmu {
+            get {
+                return ((int)(this["CHDelayForEmu"]));
+            }
+            set {
+                this["CHDelayForEmu"] = value;
             }
         }
     }

@@ -10,17 +10,17 @@
 
   <ItemGroup>
     <Compile Update="Settings.Designer.cs">
-      <DesignTime>True</DesignTime>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.resx</DependentUpon>
+      <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Settings.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+    <None Update="Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    </None>
   </ItemGroup>
 
 </Project>

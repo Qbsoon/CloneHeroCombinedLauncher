@@ -32,11 +32,13 @@
             EmuButton = new Button();
             BridgeButton = new Button();
             NautilusButton = new Button();
+            settingsButton = new Button();
+            exitButton = new Button();
             SuspendLayout();
             // 
             // CHButton
             // 
-            CHButton.Location = new Point(56, 78);
+            CHButton.Location = new Point(43, 89);
             CHButton.Name = "CHButton";
             CHButton.Size = new Size(75, 23);
             CHButton.TabIndex = 0;
@@ -46,7 +48,7 @@
             // 
             // EmuButton
             // 
-            EmuButton.Location = new Point(56, 12);
+            EmuButton.Location = new Point(43, 23);
             EmuButton.Name = "EmuButton";
             EmuButton.Size = new Size(75, 49);
             EmuButton.TabIndex = 1;
@@ -56,7 +58,7 @@
             // 
             // BridgeButton
             // 
-            BridgeButton.Location = new Point(56, 118);
+            BridgeButton.Location = new Point(148, 36);
             BridgeButton.Name = "BridgeButton";
             BridgeButton.Size = new Size(75, 23);
             BridgeButton.TabIndex = 2;
@@ -66,7 +68,7 @@
             // 
             // NautilusButton
             // 
-            NautilusButton.Location = new Point(56, 156);
+            NautilusButton.Location = new Point(148, 80);
             NautilusButton.Name = "NautilusButton";
             NautilusButton.Size = new Size(75, 23);
             NautilusButton.TabIndex = 3;
@@ -74,11 +76,33 @@
             NautilusButton.UseVisualStyleBackColor = true;
             NautilusButton.Click += NautilusButton_Click;
             // 
+            // settingsButton
+            // 
+            settingsButton.Location = new Point(148, 124);
+            settingsButton.Name = "settingsButton";
+            settingsButton.Size = new Size(75, 23);
+            settingsButton.TabIndex = 4;
+            settingsButton.Text = "Settings";
+            settingsButton.UseVisualStyleBackColor = true;
+            settingsButton.Click += settingsButton_Click;
+            // 
+            // exitButton
+            // 
+            exitButton.Location = new Point(43, 129);
+            exitButton.Name = "exitButton";
+            exitButton.Size = new Size(75, 23);
+            exitButton.TabIndex = 5;
+            exitButton.Text = "Exit";
+            exitButton.UseVisualStyleBackColor = true;
+            exitButton.Click += exitButton_Click;
+            // 
             // MainWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(465, 233);
+            ClientSize = new Size(269, 175);
+            Controls.Add(exitButton);
+            Controls.Add(settingsButton);
             Controls.Add(NautilusButton);
             Controls.Add(BridgeButton);
             Controls.Add(EmuButton);
@@ -94,5 +118,7 @@
         private Button EmuButton;
         private Button BridgeButton;
         private Button NautilusButton;
+        private Button settingsButton;
+        private Button exitButton;
     }
 }
