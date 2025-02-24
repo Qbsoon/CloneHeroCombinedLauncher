@@ -7,20 +7,20 @@ namespace CloneHeroCombinedLauncher
         public MainWindow()
         {
             InitializeComponent();
-            if (Settings.Default.AutoREmu)
+            if (bool.Parse(AppDataSettings.GetSetting("AutoREmu", "false")))
             {
-                runEmu(Settings.Default.EmuPath);
-                if (Settings.Default.AutoRCH)
+                runEmu(AppDataSettings.GetSetting("EmuPath", "undefined"));
+                if (bool.Parse(AppDataSettings.GetSetting("AutoRCH", "false")))
                 {
-                    Thread.Sleep(Settings.Default.CHDelayForEmu);
-                    runCH(Settings.Default.CHPath);
+                    Thread.Sleep(int.Parse(AppDataSettings.GetSetting("CHDelayForEmu", "2500")));
+                    runCH(AppDataSettings.GetSetting("CHPath", "undefined"));
                 }
             }
             else
             {
-                if (Settings.Default.AutoRCH)
+                if (bool.Parse(AppDataSettings.GetSetting("AutoRCH", "false")))
                 {
-                    runCH(Settings.Default.CHPath);
+                    runCH(AppDataSettings.GetSetting("CHPath", "undefined"));
                 }
             }
             // TODO: Polish, add images to buttons, add some background
@@ -30,41 +30,41 @@ namespace CloneHeroCombinedLauncher
 
         private void EmuButton_Click(object sender, EventArgs e)
         {
-            runEmu(Settings.Default.EmuPath);
+            runEmu(AppDataSettings.GetSetting("EmuPath", "undefined"));
         }
 
         private void CHButton_Click(object sender, EventArgs e)
         {
-            if (Settings.Default.EmuWithCH)
+            if (bool.Parse(AppDataSettings.GetSetting("EmuWithCH", "false")))
             {
-                runEmu(Settings.Default.EmuPath);
-                Thread.Sleep(Settings.Default.CHDelayForEmu);
-                runCH(Settings.Default.CHPath);
+                runEmu(AppDataSettings.GetSetting("EmuPath", "undefined"));
+                Thread.Sleep(int.Parse(AppDataSettings.GetSetting("CHDelayForEmu", "2500")));
+                runCH(AppDataSettings.GetSetting("CHPath", "undefined"));
             }
             else
             {
-                runCH(Settings.Default.CHPath);
+                runCH(AppDataSettings.GetSetting("CHPath", "undefined"));
             }
         }
 
         private void BridgeButton_Click(object sender, EventArgs e)
         {
-            if (Settings.Default.BridgePath == "undefined")
+            if (AppDataSettings.GetSetting("BridgePath", "undefined") == "undefined")
             {
                 MessageBox.Show("Bridge path is not set. Please set it in settings.");
                 return;
             }
-            System.Diagnostics.Process.Start(Settings.Default.BridgePath);
+            System.Diagnostics.Process.Start(AppDataSettings.GetSetting("BridgePath", "undefined"));
         }
 
         private void NautilusButton_Click(object sender, EventArgs e)
         {
-            if (Settings.Default.NautilusPath == "undefined")
+            if (AppDataSettings.GetSetting("NautilusPath", "undefined") == "undefined")
             {
                 MessageBox.Show("Nautilus path is not set. Please set it in settings.");
                 return;
             }
-            System.Diagnostics.Process.Start(Settings.Default.NautilusPath);
+            System.Diagnostics.Process.Start(AppDataSettings.GetSetting("NautilusPath", "undefined"));
         }
 
         public void runEmu(string rEPath)
@@ -89,7 +89,7 @@ namespace CloneHeroCombinedLauncher
 
         private void songsButton_Click(object sender, EventArgs e)
         {
-            string songsDirectory = Environment.ExpandEnvironmentVariables(Settings.Default.SongsDir);
+            string songsDirectory = Environment.ExpandEnvironmentVariables(AppDataSettings.GetSetting("SongsDir", "%USERPROFILE%\\Documents\\Clone Hero\\Songs\\"));
             System.Diagnostics.Process.Start("explorer.exe", songsDirectory);
         }
 
