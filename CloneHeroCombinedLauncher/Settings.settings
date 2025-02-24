@@ -26,5 +26,8 @@
     <Setting Name="CHDelayForEmu" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">2500</Value>
     </Setting>
+    <Setting Name="SongsDir" Type="System.String" Scope="User">
+      <Value Profile="(Default)">%USERPROFILE%\Documents\Clone Hero\Songs\</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

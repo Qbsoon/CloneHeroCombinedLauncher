@@ -216,6 +216,7 @@
             exitButton.TabIndex = 16;
             exitButton.Text = "Save";
             exitButton.UseVisualStyleBackColor = true;
+            exitButton.Click += SaveButton_Click;
             // 
             // SettingsWindow
             // 

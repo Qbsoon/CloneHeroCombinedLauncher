@@ -118,5 +118,17 @@ namespace CloneHeroCombinedLauncher {
                 this["CHDelayForEmu"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("%USERPROFILE%\\Documents\\Clone Hero\\Songs\\")]
+        public string SongsDir {
+            get {
+                return ((string)(this["SongsDir"]));
+            }
+            set {
+                this["SongsDir"] = value;
+            }
+        }
     }
 }

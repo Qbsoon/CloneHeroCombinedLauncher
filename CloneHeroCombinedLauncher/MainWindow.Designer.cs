@@ -34,11 +34,12 @@
             NautilusButton = new Button();
             settingsButton = new Button();
             exitButton = new Button();
+            songsButton = new Button();
             SuspendLayout();
             // 
             // CHButton
             // 
-            CHButton.Location = new Point(43, 89);
+            CHButton.Location = new Point(43, 88);
             CHButton.Name = "CHButton";
             CHButton.Size = new Size(75, 23);
             CHButton.TabIndex = 0;
@@ -48,7 +49,7 @@
             // 
             // EmuButton
             // 
-            EmuButton.Location = new Point(43, 23);
+            EmuButton.Location = new Point(43, 21);
             EmuButton.Name = "EmuButton";
             EmuButton.Size = new Size(75, 49);
             EmuButton.TabIndex = 1;
@@ -58,7 +59,7 @@
             // 
             // BridgeButton
             // 
-            BridgeButton.Location = new Point(148, 36);
+            BridgeButton.Location = new Point(148, 21);
             BridgeButton.Name = "BridgeButton";
             BridgeButton.Size = new Size(75, 23);
             BridgeButton.TabIndex = 2;
@@ -68,7 +69,7 @@
             // 
             // NautilusButton
             // 
-            NautilusButton.Location = new Point(148, 80);
+            NautilusButton.Location = new Point(148, 57);
             NautilusButton.Name = "NautilusButton";
             NautilusButton.Size = new Size(75, 23);
             NautilusButton.TabIndex = 3;
@@ -78,7 +79,7 @@
             // 
             // settingsButton
             // 
-            settingsButton.Location = new Point(148, 124);
+            settingsButton.Location = new Point(148, 129);
             settingsButton.Name = "settingsButton";
             settingsButton.Size = new Size(75, 23);
             settingsButton.TabIndex = 4;
@@ -96,11 +97,22 @@
             exitButton.UseVisualStyleBackColor = true;
             exitButton.Click += exitButton_Click;
             // 
+            // songsButton
+            // 
+            songsButton.Location = new Point(148, 93);
+            songsButton.Name = "songsButton";
+            songsButton.Size = new Size(75, 23);
+            songsButton.TabIndex = 6;
+            songsButton.Text = "Songs";
+            songsButton.UseVisualStyleBackColor = true;
+            songsButton.Click += songsButton_Click;
+            // 
             // MainWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(269, 175);
+            Controls.Add(songsButton);
             Controls.Add(exitButton);
             Controls.Add(settingsButton);
             Controls.Add(NautilusButton);
@@ -120,5 +132,6 @@
         private Button NautilusButton;
         private Button settingsButton;
         private Button exitButton;
+        private Button songsButton;
     }
 }

@@ -23,9 +23,6 @@ namespace CloneHeroCombinedLauncher
                     runCH(Settings.Default.CHPath);
                 }
             }
-            // TODO: Open Songs directory button
-            // TODO: Settings button
-            // TODO: Ask for paths at first run
             // TODO: Polish, add images to buttons, add some background
             // TODO: Polish language
 
@@ -52,22 +49,48 @@ namespace CloneHeroCombinedLauncher
 
         private void BridgeButton_Click(object sender, EventArgs e)
         {
+            if (Settings.Default.BridgePath == "undefined")
+            {
+                MessageBox.Show("Bridge path is not set. Please set it in settings.");
+                return;
+            }
             System.Diagnostics.Process.Start(Settings.Default.BridgePath);
         }
 
         private void NautilusButton_Click(object sender, EventArgs e)
         {
+            if (Settings.Default.NautilusPath == "undefined")
+            {
+                MessageBox.Show("Nautilus path is not set. Please set it in settings.");
+                return;
+            }
             System.Diagnostics.Process.Start(Settings.Default.NautilusPath);
         }
 
         public void runEmu(string rEPath)
         {
+            if (rEPath == "undefined")
+            {
+                MessageBox.Show("Emulator path is not set. Please set it in settings.");
+                return;
+            }
             System.Diagnostics.Process.Start(rEPath);
         }
 
         public void runCH(string rCHPath)
         {
+            if (rCHPath == "undefined")
+            {
+                MessageBox.Show("Clone Hero path is not set. Please set it in settings.");
+                return;
+            }
             System.Diagnostics.Process.Start(rCHPath);
+        }
+
+        private void songsButton_Click(object sender, EventArgs e)
+        {
+            string songsDirectory = Environment.ExpandEnvironmentVariables(Settings.Default.SongsDir);
+            System.Diagnostics.Process.Start("explorer.exe", songsDirectory);
         }
 
         private void settingsButton_Click(object sender, EventArgs e)
